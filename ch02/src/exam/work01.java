@@ -10,8 +10,9 @@ public class work01 {
 		int weight = 75;
 		int height = 175;
 
+		//제지방량
 		double result = ST1 * weight - ST2 * 
-				        ((weight * weight) / (double) (height * height));
+				        ((weight * weight) /(double)(height * height)); 
 
 		System.out.println(result);
 
