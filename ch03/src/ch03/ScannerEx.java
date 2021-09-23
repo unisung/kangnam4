@@ -6,6 +6,8 @@ public class ScannerEx {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+   // println() => print and new Line
+   // print() => 현재 줄에서 계속 이어서 출력
     System.out.println("이름,도시, 나이,체중, 독신 여부를 빈칸으로 분리하여 입력하세요:");
     //스캐너타입 변수 선언 및 객체 생성 
     Scanner scanner = new Scanner(System.in);
@@ -23,7 +25,7 @@ public class ScannerEx {
     System.out.print("체중은 "+weight+"kg, ");
     
     boolean single = scanner.nextBoolean();//boolean nextBoolean()
-    System.out.println("독신여부는 "+single+"입니다.");
+    System.out.println("독신여부는 "+(single?"싱글":"유부")+"입니다.");
     
     //자원해제
     scanner.close();
