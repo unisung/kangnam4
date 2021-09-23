@@ -20,8 +20,13 @@ System.out.println("[비트 연산 결과]");
 System.out.println((short)(a&b));// A and B
 //System.out.printf("%0x\n",(short)(a&b));// A and B, %포멧 시작, 0x는 16진수, \n은 escape문자 다음줄로 이동
 System.out.printf("%04x\n",(short)(a&b));// A and B, %포멧 시작, 0x는 16진수, 04x =>0x사이의 4는 출력 길이표시
-System.out.printf("%04x\n",(short)(a|b));//		
-System.out.printf("%04x\n",(short)(a^b));
+System.out.printf("%04x\n",(short)(a|b));//	 0101 0101 1111 1111	
+System.out.printf("%04x\n",(short)(a^b)); // 0101 0101 0000 0000
 System.out.printf("%04x\n",(short)(~a));// ~0101 0101  1111 1111=> 1010 1010 0000 0000 => 10 10 0 0 = a a 0 0
+
+System.out.println("hello");
+System.out.printf("hello\n");
+System.out.println("hello");
+
 	}
 }
