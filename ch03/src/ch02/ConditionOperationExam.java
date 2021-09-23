@@ -1,5 +1,5 @@
 package ch02;
-
+/* 삼항연산자 끝. 3장끝 - 과제: 확인문제 */
 public class ConditionOperationExam {
 
 	public static void main(String[] args) {
@@ -21,7 +21,6 @@ public class ConditionOperationExam {
     score = 80;  
     grade = score>90 ? 'A' : 'B';
     System.out.println("등급:"+grade);//String + char => String + String => "등급:" +'A' => "등급:"+"A"=>"등급:A"
-    
-    
+ 
 	}
 }
