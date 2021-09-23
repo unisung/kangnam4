@@ -39,8 +39,5 @@ public class Exam01 {
 	 System.out.println("X4..metatdata는 프로젝트의 소스 파일들이 저장되는 디렉토리이다."
 	 		             + "->환경변수, 설정값, 작업히스토리 정보 저장공간");
 	 
-	 
-	 
-	 
 	}
 }
