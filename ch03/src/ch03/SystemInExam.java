@@ -10,6 +10,7 @@ public class SystemInExam {
      //표준 입력스트림으로 값 입력 받기
 		System.out.print("입력:");
 		int a = System.in.read(); //'A' -> ascii 65로 인식
+		//int a = (int)('A');
 		System.out.println("출력: "+a);// keyboard로 키를 입력 후 Enter키를 누름(Enter키 = '\r''\n') 
 		System.in.read();// \r
 		System.in.read();// \n
