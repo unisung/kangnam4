@@ -17,7 +17,7 @@ public static void main(String[] args) {
 	default: grade ="F"; break;
 	}
 	
-	System.out.printf("성적은 %d이고 학점은 %s",score,grade);
+	System.out.printf(" 성적은 %d이고 학점은 %s ",score,grade);
 	
 }
 }
