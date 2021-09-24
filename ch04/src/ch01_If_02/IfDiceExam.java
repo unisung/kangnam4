@@ -4,7 +4,10 @@ package ch01_If_02;
 public class IfDiceExam {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int num =5;
+		int num;
+		 // 0+1 <=(int)(Math.random()*6)+1 <6+1
+		
+		num = (int)(Math.random()*6)+1;//1,2,3,4,5,6 중에 하나의 값 출력
 		
 		if(num==1) {
 			System.out.println("1번이 나왔습니다.");
