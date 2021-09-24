@@ -21,9 +21,19 @@ public static void main(String[] args) {
     	else if(score==85) grade +="0";//score==85; "B"+"0" ="B0" //85
     	else grade +="-";// "B"+"-" =>"B-"//  80~84
     }
-    else if(score>=70) grade="C";//80미만 중에서 70이상
-    else if(score>=60) grade="D";//70미만 중에서 60이상
-    else grade="F";//나머지(default) 60미만 모두
+    else if(score>=70) {
+    	grade="C";//80미만 중에서 70이상
+	if(score>75) grade +="+";// 
+	else if(score==75) grade +="0";
+	else grade +="-";//
+   }
+    else if(score>=60) {
+    	grade="D";//70미만 중에서 60이상
+    	if(score>65) grade +="+";// 
+    	else if(score==65) grade +="0";
+    	else grade +="-";//
+    }else
+    	grade="F";//나머지(default) 60미만 모두
     
     System.out.println("점수는 "+ score +"이고, 학점은 "+ grade + "입니다.");
 }
