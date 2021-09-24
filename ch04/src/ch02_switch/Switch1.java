@@ -8,6 +8,7 @@ public class Switch1 {
 		// TODO Auto-generated method stub
 	Scanner scanner = new Scanner(System.in);
 	
+	System.out.println("숫자를 입력하세요");
       int num = scanner.nextInt();
       switch(num) {
       case 1: System.out.print("L");break;
