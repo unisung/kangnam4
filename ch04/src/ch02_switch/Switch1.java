@@ -15,6 +15,7 @@ public class Switch1 {
       case 3: System.out.print("V");break;
       case 4: System.out.print("E");break;
       default:System.out.println("¹¹¾ß");
+      
       }
 		
 		
