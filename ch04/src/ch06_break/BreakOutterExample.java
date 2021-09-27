@@ -1,7 +1,6 @@
 package ch06_break;
 
 public class BreakOutterExample {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// char타입
@@ -12,8 +11,6 @@ public class BreakOutterExample {
 					break;
 			}
 		}
-		
 		System.out.println("프로그램 종료");
 	}
-
 }
