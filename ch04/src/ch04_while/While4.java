@@ -11,7 +11,7 @@ public class While4 {
 			int num = System.in.read()-'0';//표준입력 스트림 '0'키를 누른경우:48-48,'1'=>49-48=1
 			System.out.println("구구단 "+num +"단");
 			int i=1;
-			while(i<=9) {// while블럭{}을 빠져나가는 조건
+			while(i<=9){// while블럭{}을 빠져나가는 조건
 				System.out.println(num+"*"+i+"="+(i*num));//출력
 				i++;//증가 명령문
 			}
