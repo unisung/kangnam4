@@ -12,11 +12,11 @@ public static void main(String[] args) {
 	
 	int sum=0;
 
-	for(int i=0;i<10;i++) {
+	for(int i=0;i<scores.length;i++) {
 		 sum=sum+scores[i];// 배열에 저장된 요소 접근 - 배열변수명[index번호] 
 	}
 	
-	double avg = sum/(double)10;
+	double avg = sum/(double)scores.lengt;
 	System.out.println("avg:"+avg);
 
 }
