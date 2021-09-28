@@ -49,7 +49,9 @@ public class Exam8 {
 			   break;
 		case 2:
 			System.out.print("Ãâ±Ý¾×>");
-			 balance -= scanner.nextInt();
+			 int money = scanner.nextInt();
+			if(balance - money >= 0  )
+			   balance -= money;
 			break;	
 		case 3:
 			System.out.println("ÀÜ°í>"+balance);
