@@ -10,7 +10,7 @@ public class A {
 	//아규먼트의 갯수만큼 String[] 배열 생성되어서 전달.
 	//java A hello world my name is 길동
 	//=> String[] args={hello,world,my,name, is,길동};
-	public static void main(String[] args) {
+	public static void main(String[] args) {//argument, 인자, 매개변수 부분
 	
 	System.out.println("배열의 길이:"+args.length);
 	System.out.println("배열의 첫번째 값:"+args[0]);
@@ -18,7 +18,6 @@ public class A {
 	
     for(int i=0;i<args.length;i++)
     	System.out.println(args[i]);
-
 	}
 
 }
