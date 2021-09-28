@@ -27,14 +27,13 @@ import java.util.Scanner;
 선택> 4   
 프로그램 종료  // run=!run;
  * */
-public class Exam07 {
+public class Exam8 {
 	public static void main(String[] args) {
 	  //반복처리시 조건문확인 변수
 	  boolean run=true;//
 	  //현재금액 변수
 	  int balance = 0;
 	  Scanner scanner = new Scanner(System.in);
-	  
 	  //
 	  while(run) {
 		 System.out.println("--------------");
@@ -43,21 +42,23 @@ public class Exam07 {
 		 System.out.println("선택>");
 		 
 		 int menu = scanner.nextInt();
-		 if(menu==1) {
-		 System.out.print("예금액>");
-		 balance += scanner.nextInt();
-		 }else if(menu==2) {
-		 System.out.print("출금액>");
-		 balance -= scanner.nextInt();
-		 }else if(menu==3) {
-		 System.out.println("잔고>"+balance);	 
-		 }else if(menu==4) {
-			 run = !run;
-		 }else {
-		  System.out.print("매뉴번호를 확인하세요");
-		 }
-	  }
+		 switch (menu) {
+		case 1:
+			 System.out.print("예금액>");
+			 balance += scanner.nextInt();
+			   break;
+		case 2:
+			System.out.print("출금액>");
+			 balance -= scanner.nextInt();
+			break;	
+		case 3:
+			System.out.println("잔고>"+balance);
+			break;
+		case 4:  run = !run;
+			break;
+		default: System.out.print("매뉴번호를 확인하세요");
+		 }//switch끝.
+	  }//while끝.
       System.out.println("프로그램 종료");
-		
 	}
 }
