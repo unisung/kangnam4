@@ -20,6 +20,7 @@ public class Arr1Ex {
 			               {14,15,16},
 			               {17,18,19}}
 			               };
+		//String.toString();
 		for(int i=0;i<arr3.length;i++) {
 			for(int j=0;j<arr3[i].length;j++) {
 				for(int k=0;k<arr3[i][j].length;k++) {
