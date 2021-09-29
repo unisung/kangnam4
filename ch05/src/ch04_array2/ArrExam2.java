@@ -48,6 +48,7 @@ public class ArrExam2 {
 	    		 }
 	    	 }//안쪽 for문
 	     }//바깥쪽 for문
+	     
 	     for(int i:scores)   	
 	    	 System.out.print(i+", ");
 	     System.out.println();
