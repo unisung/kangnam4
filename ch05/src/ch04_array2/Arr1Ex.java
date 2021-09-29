@@ -21,6 +21,7 @@ public class Arr1Ex {
 			               {17,18,19}}
 			               };
 		//String.toString();
+		//Object.toString();//Ctrl키 + 마우스커서
 		for(int i=0;i<arr3.length;i++) {
 			for(int j=0;j<arr3[i].length;j++) {
 				for(int k=0;k<arr3[i][j].length;k++) {
@@ -31,5 +32,9 @@ public class Arr1Ex {
 		}
 		
 	}
+
+
+
+
 
 }
