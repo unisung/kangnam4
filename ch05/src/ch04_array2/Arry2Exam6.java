@@ -11,7 +11,7 @@ public class Arry2Exam6 {
 		String[] name = { "홍길동", "일지매", "임꺽정", "이순신" };
 		int sum = 0;
 		int[] tot = new int[4];//각 행의 각 열의 값 누적해서 저장하기 위한 변수
-		
+		//int avg=0;
 		int[][] score = { { 90, 80, 70 }, { 76, 86, 90 }, { 90, 78, 90 }, { 80, 65, 87 } };
 		//
 		for (int i = 0; i < score.length; i++) {// score.length-배열의 행의 갯수
@@ -23,7 +23,9 @@ public class Arry2Exam6 {
 			}//안쪽 for문
 			System.out.println(sum+"\t"+sum/score[i].length);
 			tot[tot.length-1]+=sum;//tot마지막에 sum값 저장
+			//tot[tot.length-1]+=avg;
 			sum=0;//초기화
+			//avg=0;
 		}//바깥쪽 for문
 		System.out.println("===========================================");
 		//각 과목별 합계 구하기
@@ -32,7 +34,5 @@ public class Arry2Exam6 {
 			System.out.print(tot[i]+"\t");
 		}
 		System.out.println("\n===========================================");
-		
-		
 	}
 }

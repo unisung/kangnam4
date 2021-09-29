@@ -10,7 +10,10 @@ public class Arry2Exam5 {
 		System.out.println("\n===========================================");
 		String[] name = { "홍길동", "일지매", "임꺽정", "이순신" };
 		int sum = 0;
-		int[][] score = { { 90, 80, 70 }, { 76, 86, 90 }, { 90, 78, 90 }, { 80, 65, 87 } };
+		int[][] score = { { 90, 80, 70 },
+				          { 76, 86, 90 }, 
+				          { 90, 78, 90 }, 
+				          { 80, 65, 87 } };
 		//
 		for (int i = 0; i < score.length; i++) {// score.length-배열의 행의 갯수
 			System.out.print(name[i]+"\t");
