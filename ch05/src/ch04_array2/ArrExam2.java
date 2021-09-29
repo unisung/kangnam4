@@ -2,7 +2,7 @@ package ch04_array2;
 
 import java.util.Scanner;
 
-public class ArrExam01 {
+public class ArrExam2 {
  public static void main(String[] args) {
   //성적표 프로그램
   //스캐너로 값을 입력받기 int[] score = {76,45,34,89,100,50,90,92}; 
@@ -28,15 +28,11 @@ public class ArrExam01 {
   switch(menu){
   case 1: 
 	     System.out.println("성적입력>");
-	     for(int i=0;i<scores.length;i++) {
-	    	 scores[i]=scanner.nextInt();	 
-	     }
+	     for(int i=0;i<scores.length;i++) scores[i]=scanner.nextInt();	 
 	     break;
   case 2:
-	  System.out.println("통계출력>");
-	    for(int i=0;i<scores.length;i++) {
-	    	 sum+=scores[i];
-	    }
+	   System.out.println("통계출력>");
+	    for(int i:scores)  sum+=i;
         System.out.println("성적합계:"+sum);
         System.out.println("성적평균:"+(sum/(double)scores.length));
 	     break;
@@ -45,24 +41,20 @@ public class ArrExam01 {
 	     int temp=0;//변수 바꾸기 용 임시 저장변수
 	     for(int i=0;i<scores.length;i++) {
 	    	 for(int j=i+1;j<scores.length;j++) {
-	    		 if(scores[i] > scores[j]) {//오름차순은 큰값이 뒤로 가야하는데 큰값이 앞에 있으면 뒤로 이동시킴.
+	    		 if(scores[i] < scores[j]) {//내림차순은 작은값이 뒤로 가야하는데 작은값이 앞에 있으면 뒤로 이동시킴.
 	    			 temp = scores[i];//임시저장
 	    			 scores[i]=scores[j];//뒤의 값을 앞으로 이동
 	    			 scores[j]=temp;//앞의 값을 뒤로 이동.
 	    		 }
 	    	 }//안쪽 for문
 	     }//바깥쪽 for문
-	     //길이가 8이 배열의 index값 출력 0,1,2,3,4,5,6,7 <- 7=8-1 <- scores.lenght-1
-	     //for(int i=0;i<score.length;i++){ }
-	     for(int i=(scores.length-1); i >=0;i--) {
-	    	 System.out.print(scores[i]+" ");
-	     }
+	     for(int i:scores)   	
+	    	 System.out.print(i+", ");
 	     System.out.println();
 	     break;
   case 4: run = !run;
   }
 	}//반복문
 	 System.out.println("종료");
-	 
 }
 }
