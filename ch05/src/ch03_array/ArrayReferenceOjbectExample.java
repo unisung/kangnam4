@@ -18,6 +18,7 @@ public class ArrayReferenceOjbectExample {
 	 System.out.println(strArray[0]==strArray[2]?"같은객체 참조":"다른객체 참조");//false
 	 
 	 //참조하고 있는 객체의 내용이 같은지 비교하는 방법 - equals()메소드를 사용한다.
+	 //논리적 동등(quivalence) 비교
 	 System.out.println(strArray[0].equals(strArray[1])?"참조하는 객체의 내용이 같다":"참조하는 객체의 내용이 다르다");//true
 	 System.out.println(strArray[0].equals(strArray[2])?"참조하는 객체의 내용이 같다":"참조하는 객체의 내용이 다르다");//false
 	 
