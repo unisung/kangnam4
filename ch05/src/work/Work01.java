@@ -3,6 +3,7 @@ package work;
  * 스캐너로 입력값 입력받기 성별, 나이, 키, 몸무게
  * 반복처리 가능하게 만들고 
  * 계속 여부 출력후 yes/no값을 받아서 종료하도록 수정하기.
+ *  https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=kmovie97&logNo=150186681215
  * */
 public class Work01 {
 	public static void main(String[] args) {
