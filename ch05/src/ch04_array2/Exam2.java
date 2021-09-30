@@ -3,7 +3,7 @@ package ch04_array2;
 import java.util.Scanner;
 
 
-public class Exam01 {
+public class Exam2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
       //1. id="hong", pwd="1234"
@@ -11,8 +11,8 @@ public class Exam01 {
 	  // 아니면 "1회 실패하였습니다". 출력
 	  // 5회 실패하면, "5회 실패하였습니다. 프로그램을 종료 합니다" 출력 후 종료
 	  Scanner scanner = new Scanner(System.in);
-	  int cnt=0;
-	  while(true) {
+	  int cnt=0;//초기화
+	  for(;;) {//무한 반복
 		   String id,pwd;//참조타입 변수
 		   if(cnt==5) {//기본데이타 타입의 값 비교
 			   System.out.println(cnt+"회 실패하였습니다. 프로그램을 종료 합니다");
@@ -28,7 +28,7 @@ public class Exam01 {
 		          break;
 		        }
 		   //실패시
-		   cnt++;
+		   cnt++;//증가
 		   if(cnt!=5)
 		   System.out.println(cnt + "회 실패하였습니다.");
 	  }
