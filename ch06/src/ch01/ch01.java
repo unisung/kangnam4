@@ -9,5 +9,8 @@ public class ch01 {
 	 //Person객체에게 메소들 호출- 신호전달
 	 //참조변수.메소드명();으로 호출
 	 person.calc();
+
 }
+ 
+
 }
