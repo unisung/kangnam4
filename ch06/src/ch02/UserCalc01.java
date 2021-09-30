@@ -10,7 +10,7 @@ public class UserCalc01 {
 	 System.out.println("두개의 정수를 입력하세요.");
 	 System.out.println("첫 번째 정수>");
 	 int x=scanner.nextInt();
-	 System.out.println("첫 번째 정수>");
+	 System.out.println("두 번째 정수>");
 	 int y=scanner.nextInt();
 	 //Calc01객체 생성
 	 Calc01 cal=new Calc01();
