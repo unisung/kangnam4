@@ -7,6 +7,5 @@ public static void main(String[] args) {
   //Car car = new Car();
   //다른 생성자 - 클래스에 있는 생성자 호출
 Car car = new Car("소나타","흰색",200);
-
 	}
 }
