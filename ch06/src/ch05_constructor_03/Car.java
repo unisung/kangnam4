@@ -11,4 +11,6 @@ public class Car {
 	Car(String model,String color, int maxSpeed){}//String, String, int
 	Car(int maxSpeed,String model,String color){}//int, String, String
 
+	//String str = new String("ȫ�浿");
+	
 }
