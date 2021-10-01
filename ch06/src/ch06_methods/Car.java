@@ -16,5 +16,7 @@ public class Car {
 	 System.out.println("gas가 있습니다.");
 	 return true;
  }
+ 
+ 
 
 }
