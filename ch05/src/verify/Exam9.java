@@ -69,7 +69,6 @@ public class Exam9 {
 		  		      System.out.println("scores["+i+"]>"+scores[i]);
         		    break;
         	case 4: int max=0,sum=0;
-        	     
     				for(int i=0;i<scores.length;i++) {
     					if(scores[i] > max) max=scores[i];
     					 sum+=scores[i];
