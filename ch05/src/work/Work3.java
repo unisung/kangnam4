@@ -22,7 +22,7 @@ while(run){
 	  System.out.println(" 정확한 계산을 위하여 아래 정보를 입력 바랍니다");
 	  System.out.println("=====================================");
 	  System.out.println("성별(M/F) 나이(0~39) 키(cm) 몸무게(kg)순 입력>");
-	  String input = scanner.nextLine();
+	  String input = scanner.nextLine();// "M 35 170 60"
 	  String[] arr= input.split(" ");//공백 기준으로 잘라서 문자열 배열로 생성
 	  System.out.println(arr.length);
 	  String gender = arr[0];
