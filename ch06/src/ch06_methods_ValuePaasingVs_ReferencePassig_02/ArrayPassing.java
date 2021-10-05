@@ -19,6 +19,4 @@ public class ArrayPassing {
 			array[i]++;// int x=array[i]; x++; array[i]=x;//각 요소의 저장된 값을 1씩 증가 
 		}
 	}
-	
-
 }
