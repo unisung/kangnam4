@@ -16,4 +16,10 @@ public class C {
 	 //b2.n=10;
 	 //b2.g();
  }
+ 
+ public void k3() {
+	 B3 b3=new B3();
+	 b3.n=10;
+	 b3.g();
+ }
 }
