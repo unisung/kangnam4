@@ -22,4 +22,11 @@ public class C {
 	 b3.n=10;
 	 b3.g();
  }
+ 
+ public void k4() {
+	 B4 b4=new B4();
+	 b4.n=10;
+	 b4.g();
+ }
+ 
 }
