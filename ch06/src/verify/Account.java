@@ -31,6 +31,11 @@ public int getBalance() {
 public void setBalance(int balance) {
 	this.balance = balance;
 }
+//Account 정보 출력 메소드
+@Override
+public String toString() {
+	return "Account [ano=" + ano + ", owner=" + owner + ", balance=" + balance + "]";
+}
 
 
  
