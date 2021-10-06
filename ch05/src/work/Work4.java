@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /* 체지방 구하기 */
 public class Work4 {
+	//전역(global)변수
 	static Scanner scanner = new Scanner(System.in);	
 	static String gender;
 	static int age;
@@ -24,7 +25,8 @@ public static void main(String[] args) {
 	 * 3. 체지방율 = 체지방량 * 100/체중                
 	 * */	  
 while(run){	
-	  String gender; int age;double height,weight;
+	//local
+	  //String gender; int age;double height,weight;
 	  //static void printMenu(){}
 	  	printMenu();
 	  //static void inputInfo(){}
