@@ -11,13 +11,14 @@ public Person(String ssn, String name) {
 	this.ssn = ssn;
 	this.name = name;
 }
+
 public static void main(String[] args) {
-	Person person = new Person("20010101-1234567","ȫ�浿");
-	//person.nation="usa";
-	//person.ssn="1234";
-	System.out.println(person.nation);
-	System.out.println(person.ssn);
-	System.out.println(person.name);
-} 
- 
+		Person person = new Person("20010101-1234567","ȫ�浿");
+		//person.nation="usa";
+		//person.ssn="1234";
+		System.out.println(person.nation);
+		System.out.println(person.ssn);
+		System.out.println(person.name);
+		Person person2 = new Person("20010101-2234567","ȫ�浿");
+	} 
 }
