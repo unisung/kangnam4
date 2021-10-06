@@ -10,6 +10,5 @@ public class ExMain {
       SingleTon s2 = SingleTon.getInstance();
      
       System.out.println(s1==s2?"°°Àº°´Ã¼":"´Ù¸¥°´Ã¼");
-      
 	}
 }
