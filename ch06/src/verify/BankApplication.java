@@ -68,20 +68,41 @@ public class BankApplication {
 	
 	//예금하기
 	private static void deposit() {
-		System.out.println("입금");
-		/*
-		 * String ano = scanner.next(); int amount = scanner.nextInt(); Account acc =
-		 * findAccount(ano); if(acc!=null) acc.setBalance(acc.getBalance()+amount);
-		 */
+		System.out.println("------");
+		System.out.println("예금");
+		System.out.println("------");
+		System.out.print("계좌번호");
+		String ano = scanner.next();
+		System.out.print("예금액");
+		int amount = scanner.nextInt();
+		Account acc = findAccount(ano);
+		if (acc != null) {
+			acc.setBalance(acc.getBalance() + amount);
+            System.out.println("결과:예금이 성공되었습니다.");
+		}else {
+			System.out.println("결과:계좌번호를 확인해주세요.");
+		}
 	}
      //출금하기	
 	private static void withdraw() {
+		System.out.println("------");
 		System.out.println("출금");
-		/*
-		 * String ano = scanner.next(); int amount = scanner.nextInt(); Account acc =
-		 * findAccount(ano); if(acc!=null) { if(acc.getBalance()-amount>=0) {
-		 * acc.setBalance(acc.getBalance()-amount); } }
-		 */
+		System.out.println("------");
+		System.out.print("계좌번호");
+		String ano = scanner.next();
+		System.out.print("출금액");
+		int amount = scanner.nextInt();
+		Account acc = findAccount(ano);
+		if (acc != null) {
+			if (acc.getBalance() - amount >= 0) {
+				acc.setBalance(acc.getBalance() - amount);
+				System.out.println("결과:출금이 성공되었습니다.");
+			}else {
+				System.out.println("결과:잔고가 부족합니다.");
+			}
+		}else {
+			System.out.println("결과:계좌번호를 확인해주세요.");
+		} 
 	}
      // [Account][Account][null][null][Account][null].....[null]
 	//Account 배열에서 ano와 동일한 Account 객체 찾기-
@@ -92,7 +113,7 @@ public class BankApplication {
 			  account =accountArray[i];
 			if(account!=null) {  
 			  if(account.getAno().equals(ano))
-				return account;//ano에 해당하는 객체 리턴
+				break;//ano에 해당하는 객체 리턴
 			}
 		}
 		return account;	//배열 전체를 찾아도 없으면 null리턴
