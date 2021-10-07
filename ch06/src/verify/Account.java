@@ -1,5 +1,6 @@
 package verify;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 //클래스
@@ -14,7 +15,9 @@ public class Account {
 
  {
 	seq++;
-	ano = bankNo +"-"+seq+seq+seq;
+	DecimalFormat df = new DecimalFormat("000");
+	df.format(seq);
+	ano = bankNo +"-"+df.format(seq);
  }
  //생성자
 public Account(String ano, String owner, int balance) {
