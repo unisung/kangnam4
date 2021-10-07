@@ -1,6 +1,9 @@
 package verify;
 
+import java.util.Arrays;
+
 //클래스
+
 public class Account {
 	//필드
  private String ano;
@@ -34,10 +37,10 @@ public void setBalance(int balance) {
 //Account 정보 출력 메소드
 @Override
 public String toString() {
-	return "Account [ano=" + ano + ", owner=" + owner + ", balance=" + balance + "]";
+	return "Account [계좌번호=" + ano 
+			+ ", 계좌주=" + owner 
+			+ ", 잔고=" + balance + "]";
 }
 
-
- 
- 
 }
+

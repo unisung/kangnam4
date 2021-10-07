@@ -39,8 +39,13 @@ public class BankApplication {
 		String owner = scanner.next();
 		System.out.print("초기입금액:");
 		int balance = scanner.nextInt();
+		
 		Account acc = new Account(ano, owner, balance);
+		
+		//[Account][Account][Account][][][][][][][][][][][][][][][][]...[]
+		
 		accountArray[idx++] = acc;
+		
 		System.out.println("결과:계좌가 생성되었습니다.");
 	}
 	//계좌목록보기
@@ -52,8 +57,12 @@ public class BankApplication {
 		//객체 참조타입 배열을 순차적으로 읽으면서 참조변수가 null이 아닐때만 출력.
 		 for(int i=0;i<accountArray.length;i++) { //오류발생
 			 Account account =accountArray[i];
-			 if(account!=null)
-		   System.out.println(account.toString()); //null로 되어있는 참조변수의 값을 toString()으로 읽으면 nullPointer오류발생
+			 if(account!=null) {
+				 System.out.println("계좌번호:"+account.getAno());
+				 System.out.println("계좌주:"+account.getOwner());
+				 System.out.println("잔고:"+account.getBalance());
+				 System.out.println(account.toString()); //null로 되어있는 참조변수의 값을 toString()으로 읽으면 nullPointer오류발생
+			 }
 		  }
 	}
 	
@@ -74,18 +83,18 @@ public class BankApplication {
 		 * acc.setBalance(acc.getBalance()-amount); } }
 		 */
 	}
-
+     // [Account][Account][null][null][Account][null].....[null]
 	//Account 배열에서 ano와 동일한 Account 객체 찾기-
 	//참조타입 배열의 값 비교
 	private static Account findAccount(String ano) {
-		  Account account=null;
+		Account account=null;//로컬변수
 		for(int i=0;i<accountArray.length;i++) {
 			  account =accountArray[i];
 			if(account!=null) {  
 			  if(account.getAno().equals(ano))
-				return account;
+				return account;//ano에 해당하는 객체 리턴
 			}
 		}
-		return account;		
+		return account;	//배열 전체를 찾아도 없으면 null리턴
 	}
 }
