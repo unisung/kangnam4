@@ -4,6 +4,11 @@ public class Drive {
 	void drive(Vehicle v) {
 		v.run();
 	}
+	void drive(Vehicle[] vs) {
+		for(Vehicle v:vs) {
+			v.run();
+		}
+	}
 	
  public static void main(String[] args) {
 	Drive drv = new Drive();
@@ -17,5 +22,12 @@ public class Drive {
 	Truck truck = new Truck();
 	drv.drive(truck);
 	
+	Vehicle[] vehicles = new Vehicle[4];
+	vehicles[0]=v1;
+	vehicles[1]=bus;
+	vehicles[2]=truck;
+	vehicles[3]=bus;
+	
+	drv.drive(vehicles);	
 }	
 }
