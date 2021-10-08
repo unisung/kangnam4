@@ -22,6 +22,16 @@ public static void main(String[] args) {
 	
 	//처음에 B타입으로 생성 후 부모타입으로 promotion후 다시 원래타입(B타입)으로 casting가능.
 	B b4 =(B)a1;
+	// 처음부터 부모타입 객체를 자식참조변수에 대입 불가
+	//B b5 = new A();
+	
+	// Cat은 Dog이 될수 없음.
+	B b6 = new B();
+	C c6 = new C();
+	
+	//불가능 //java.lang.ClassCastException발생 - runtime시 발생 
+	A a6 = b6;
+	c6 = (C)a6;
 	
 }
 }
