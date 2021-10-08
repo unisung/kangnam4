@@ -7,12 +7,13 @@ public class SalaryMan extends Employee {
 		super(name);
 		this.annualSal=annualSal;
 	}
+
 	@Override
 	int computePay() {
 		sal = annualSal/12;
 		return sal;
 	}
 	
-	
+	 //final int computeIncentive() {}
 
 }

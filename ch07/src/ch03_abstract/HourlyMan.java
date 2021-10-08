@@ -9,12 +9,12 @@ public class HourlyMan extends Employee {
 		this.workHour = workHour;
 		this.moneyPerHour = moneyPerHour;
 	}
-	
-	//급여계산
+	@Override
 	int computePay() {
-		sal=workHour*moneyPerHour;
-		return sal;
+		return workHour * moneyPerHour;
 	}
+	
+	
 	
 
 }

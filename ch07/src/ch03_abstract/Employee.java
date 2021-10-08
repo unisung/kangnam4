@@ -8,9 +8,10 @@ public abstract class Employee{//추상클래스 - 급여계산 규격 정의
  
  public Employee(String name) {this.name = name;} 
  //메소드
- int computePay() {return 0;}
+ abstract int computePay();
+ 
  //final 메소드 -재정의 불가
- final int computeIncentive() {
+final int computeIncentive() {
 	 int pay=computePay();
 	 int bonus=0;
 	 if(pay>10000) {
