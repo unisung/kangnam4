@@ -3,7 +3,7 @@ package ch03_abstract;
 //*월급사원,알바사원 급여 계산*/
 public abstract class Employee{//추상클래스 - 급여계산 규격 정의
  private String name;
- private int sal;//급여
+    int sal;//급여
  private final float INCENTIVE_RATE = 0.1f;//
  
  public Employee(String name) {this.name = name;} 
