@@ -11,6 +11,9 @@ public class LendableEx {
 		printState(sv);
 		sv.checkOut("수지","2021/03/25");
         printState(sv);
+        
+        sv.checkOut("길동","2021/03/26");
+        
         //반납
         sv.checkIn();
         
