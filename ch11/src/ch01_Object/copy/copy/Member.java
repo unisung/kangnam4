@@ -27,7 +27,9 @@ public boolean equals(Object obj) {
 //1.hash코드 비교
 @Override
 public int hashCode() {
-	return 
+	return name.hashCode()+age;
 }
+
+
    
 }
