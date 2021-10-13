@@ -1,3 +1,5 @@
+package ch02_work;
+
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -66,17 +68,19 @@ public class LenderApplication {
 		System.out.println("------");
 		System.out.println("대여");
 		System.out.println("------");
-		System.out.print("도서번호>");
+		System.out.print("도서번호>");//대여할 도서번호
 		String requestNo = scanner.next();
-		System.out.print("회원명");
+		System.out.print("회원명");//대출자
 		String name=scanner.next();
+		//대여일자 자동생성 "2021/10/13"
 		Calendar cal = Calendar.getInstance();
 		int year=cal.get(Calendar.YEAR);
 		int month=cal.get(Calendar.MONTH)+1;
 		int date=cal.get(Calendar.DATE);
-		
+		//도서번호로 대여 도서 찾기
 		SeperateVolume sv = findVolume(requestNo);
 		if (sv != null) {
+			//대출처리 메소드 실행
 			sv.checkOut(name, year+"/"+month+"/"+date);
 		}else {
 			System.out.println("결과:도서번호를 확인해주세요.");
@@ -97,7 +101,6 @@ public class LenderApplication {
 		} else {
 			System.out.println("결과:도서 번호를 확인해주세요.");
 		}
-		 
 	}
      
 	//도서번호로 도서 찾기
