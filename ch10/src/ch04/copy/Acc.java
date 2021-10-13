@@ -1,4 +1,4 @@
-package ch04;
+package ch04.copy;
 
 public class Acc {
   private String ano;
@@ -41,16 +41,12 @@ public void deposit(int amount) {
 }
 
 //출금
-public void withdraw(int amount) {
+public void withdraw(int amount) throws Exception{
 	//예외발생
-	try{
 	if(balance-amount <0) {
-	 throw new Exception("잔고부족 예외");	
-	 }
-	  balance -=amount;
-	}catch(Exception e) {
-		System.out.println(e.getMessage());
+	 throw new Exception("잔고부족 예외");
 	}
+	 balance -=amount;
 }
 
 
