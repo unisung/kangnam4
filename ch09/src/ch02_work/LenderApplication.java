@@ -1,5 +1,4 @@
-package ch02_work;
-
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class LenderApplication {
@@ -19,10 +18,10 @@ public class LenderApplication {
 		 
 		 int selectNo = scanner.nextInt();
 		 switch(selectNo) {
-		 case 1: createStock(); break;
-		 case 2: stockList();break;
-		 case 3: deposit();  break;
-		 case 4: withdraw(); break;
+		 case 1: registerBook(); break;
+		 case 2: bookList();break;
+		 case 3: checkOut();  break;
+		 case 4: checkIn(); break;
 		 case 5: run=false;  break;
 		 }
 	 }
@@ -30,8 +29,8 @@ public class LenderApplication {
 		
 	}
 	
-	//재고생성하기 - Ctrl + F
-	private static void createStock() {
+	//도서등록 - Ctrl + F
+	private static void registerBook() {
 		System.out.println("------");
 		System.out.println("도서등록");
 		System.out.println("------");
@@ -43,14 +42,12 @@ public class LenderApplication {
 		
 		SeperateVolume sv = new SeperateVolume(name, writer);
 		
-		//[Stock][Stock][Stock][][][][][][][][][][][][][][][][]...[]
-		
 		svArr[idx++] = sv;
 		
 		System.out.println("결과:등록 되었습니다.");
 	}
-	//재고목록보기
-	private static void stockList() {
+	//도서리스트
+	private static void bookList() {
 		System.out.println("------");
 		System.out.println("도서 목록");
 		System.out.println("------");
@@ -64,46 +61,46 @@ public class LenderApplication {
 		  }
 	}
 	
-	//예금하기
-	private static void deposit() {
+	//대여
+	private static void checkOut() {
 		System.out.println("------");
-		System.out.println("입고");
+		System.out.println("대여");
 		System.out.println("------");
-		System.out.print("상품번호");
-		String item = scanner.next();
-		System.out.print("입고수량");
-		int qty = scanner.nextInt();
-		//Stock stock = findStock(item);
-		if (stock != null) {
-			stock.setQty(stock.getQty() + qty);
-            System.out.println("결과:입고가 성공되었습니다.");
+		System.out.print("도서번호>");
+		String requestNo = scanner.next();
+		System.out.print("회원명");
+		String name=scanner.next();
+		Calendar cal = Calendar.getInstance();
+		int year=cal.get(Calendar.YEAR);
+		int month=cal.get(Calendar.MONTH)+1;
+		int date=cal.get(Calendar.DATE);
+		
+		SeperateVolume sv = findVolume(requestNo);
+		if (sv != null) {
+			sv.checkOut(name, year+"/"+month+"/"+date);
 		}else {
-			System.out.println("결과:상품번호를 확인해주세요.");
+			System.out.println("결과:도서번호를 확인해주세요.");
 		}
 	}
-     //출고하기	
-	private static void withdraw() {
+	
+     //반납	
+	private static void checkIn() {
 		System.out.println("------");
-		System.out.println("출고");
+		System.out.println("반납");
 		System.out.println("------");
-		System.out.print("상품번호");
-		String item = scanner.next();
-		System.out.print("출고수량");
-		int qty = scanner.nextInt();
-		Stock stock = findStock(item);
-		if (stock != null) {
-			if (stock.getQty() - qty >= 0) {
-				stock.setQty(stock.getQty() - qty);
-				System.out.println("결과:출고가 성공되었습니다.");
-			}else {
-				System.out.println("결과:재고가 부족합니다.");
-			}
-		}else {
-			System.out.println("결과:상품번호를 확인해주세요.");
-		} 
+		System.out.print("도서번호");
+		String requestNo = scanner.next();
+		
+		SeperateVolume sv = findVolume(requestNo);
+		if (sv != null) {
+			sv.checkIn();
+		} else {
+			System.out.println("결과:도서 번호를 확인해주세요.");
+		}
+		 
 	}
-     // [Stock][Stock][null][null][Stock][null].....[null]
-	//Stock 배열에서 ano와 동일한 Stock 객체 찾기-
+     
+	//도서번호로 도서 찾기
 	//참조타입 배열의 값 비교
 	private static SeperateVolume findVolume(String requestNo) {
 		SeperateVolume sv=null;//로컬변수

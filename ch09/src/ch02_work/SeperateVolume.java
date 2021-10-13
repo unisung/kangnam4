@@ -1,5 +1,3 @@
-package ch02_work;
-
 import java.text.DecimalFormat;
 
 public class SeperateVolume implements Lendable{
@@ -33,7 +31,10 @@ public SeperateVolume(String requestNo, String title, String writer) {
 
 		@Override
 		public void checkOut(String name, String date) {
-	     if(state==BORROWED) return;//
+	     if(state==BORROWED) {
+	    	 System.out.println(title+"는 이미 대출중입니다.");
+	    	 return;//
+	     }
 	     this.name=name;
 	     this.date=date;
 	     state=BORROWED;//대출상태 변경
