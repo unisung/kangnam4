@@ -1,5 +1,7 @@
 package ch04.copy;
 
+import ch04.copy.copy.copy.BalanceInsufficientException;
+
 public class Acc {
   private String ano;
   private String owner;
@@ -44,7 +46,7 @@ public void deposit(int amount) {
 public void withdraw(int amount) throws Exception{
 	//예외발생
 	if(balance-amount <0) {
-	 throw new Exception("잔고부족 예외");
+	 throw new BalanceInsufficientException("잔고부족 예외");
 	}
 	 balance -=amount;
 }

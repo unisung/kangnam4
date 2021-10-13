@@ -44,7 +44,7 @@ public void deposit(int amount) {
 public void withdraw(int amount) throws Exception{
 	//예외발생
 	if(balance-amount <0) {
-	 throw new Exception("잔고부족 예외");
+	 throw new BalanceInsufficientException("잔고부족 예외");
 	}
 	 balance -=amount;
 }
