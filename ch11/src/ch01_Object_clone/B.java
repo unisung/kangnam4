@@ -33,6 +33,11 @@ protected Object clone() throws CloneNotSupportedException {
 	return b; 
  }
 
+@Override
+protected void finalize() throws Throwable {
+	// TODO Auto-generated method stub
+	super.finalize();
+}
 public B getB() {
 	B cloned = null;
 	try {
@@ -46,8 +51,11 @@ public B getB() {
 
 class Car{
 	String model;//ÂüÁ¶
-
+    Engine engine;
+    
 	public Car(String model) {
 		this.model = model;
 	}
 }
+
+class Engine{}

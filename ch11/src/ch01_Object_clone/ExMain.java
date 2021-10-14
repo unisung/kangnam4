@@ -23,5 +23,13 @@ public static void main(String[] args) {
     for(int i=0;i<original.scores.length;i++)
     	System.out.println(original.scores[i]);	
     
+    String[] a= {"±¸··ÀÌ","ÆÈ··ÀÌ","Ä¥··ÀÌ"};
+    String[] b= new String[a.length];
+    for(int i=0;i<a.length;i++)
+    	 b[i]=new String(a[i]);
+    
+    b[0]=new String("±¸··ÀÌ");
+    b[1]=new String("ÆÈ··ÀÌ");
+    b[2]=new String("Ä¥··ÀÌ");
 }
 }
