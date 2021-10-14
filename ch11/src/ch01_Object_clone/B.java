@@ -1,6 +1,8 @@
 package ch01_Object_clone;
 
-public class B {
+import java.util.Arrays;
+
+public class B implements Cloneable{
   public String name;//참조
   public int age;//기본
   public int[] scores;//참조
@@ -16,10 +18,12 @@ public B(String name, int age, int[] scores, Car car) {
 protected Object clone() throws CloneNotSupportedException {
 	B b= (B)super.clone();
 	//깊은 복제
-	int[] arr = new int[this.scores.length];
-	for(int i=0;i<this.scores.length;i++)
-		    arr[i] = this.scores[i];
-	b.scores=arr;
+//	int[] arr = new int[this.scores.length];
+//	for(int i=0;i<this.scores.length;i++)
+//		    arr[i] = this.scores[i];
+//	b.scores=arr;
+	
+	b.scores =Arrays.copyOf(this.scores, this.scores.length);
 	
 	//Car 깊은 복제
 	b.car = new Car(this.car.model);
