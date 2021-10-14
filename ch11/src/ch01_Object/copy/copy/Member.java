@@ -2,8 +2,8 @@ package ch01_Object.copy.copy;
 
 //thread, collection, network, file입출력, 
 public class Member {
- private String name;//참조타입 	
- private int age;//기본타입
+  String name;//참조타입 	
+  int age;//기본타입
 
 public Member(String name, int age) {
 	this.name = name;

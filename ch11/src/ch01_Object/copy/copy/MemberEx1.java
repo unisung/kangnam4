@@ -12,6 +12,9 @@ public class MemberEx1 {
      Member member2 = new Member("ȫ�浿",18);
      Member member3 = new Member("ȫ�浿",35);
     
+     System.out.println(member1.name.hashCode());
+     System.out.println(member2.name.hashCode());
+     
      System.out.println(member1.hashCode());
      System.out.println(member2.hashCode());
      System.out.println(member3.hashCode());
