@@ -2,10 +2,11 @@ package ch02_Objects.copy;
 
 import java.util.Comparator;
 
-public class StudentComparator implements Comparator<Student> {
+public class StudentComparator 
+   implements Comparator<Student> {
 	@Override
 	public int compare(Student o1, Student o2) {
-		 return o1.sno.compareTo(o2.sno);// "È«±æµ¿", "È«±æÀÌ"
+return o1.sno.compareTo(o2.sno);// "È«±æµ¿", "È«±æÀÌ"
 	}
 }
 
