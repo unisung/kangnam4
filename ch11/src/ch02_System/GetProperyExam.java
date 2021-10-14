@@ -29,8 +29,5 @@ public class GetProperyExam {
 		   String value=System.getProperty(key);
 		   System.out.println("["+key+"]="+value);
 	  }
-	  
-	  
-	  
 	}
 }
