@@ -3,7 +3,8 @@ package ch02_String02;
 public class StringBuilderEx2 {
 	public static void main(String[] args) {
 		//
-	 StringBuilder sb = new StringBuilder();
+	StringBuffer sb = new StringBuffer();
+	
 	 //문자열 이어붙익 append()
 	 sb.append("Java ");
 	 sb.append("Programming study");
