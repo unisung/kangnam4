@@ -20,6 +20,7 @@ public static void main(String[] args) {
     for( char c:arr4) {
     	System.out.print(c);
     }
+ 
 	
 }
 }
