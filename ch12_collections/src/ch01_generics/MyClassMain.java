@@ -11,8 +11,12 @@ public class MyClassMain {
 		//컴파일시 T ->String으로 변환
 		MyClass<String> s1=new MyClass<String>();
 		s1.set("hello");
-        System.out.println(s1.get());		
+        System.out.println(s1.get());
+        
+		MyClass<Double> s2=new MyClass<Double>();
+		s2.set(10.0);//10 -> Integer10으로 autoBoxing되어 들어감
+		s2.set(new Double(10.0));
+		System.out.println(s2.get());
 		
 	}
-
 }
