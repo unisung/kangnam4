@@ -10,10 +10,10 @@ public static void main(String[] args) {
 	// 저장된 객체의갯수 확인
 	// Map에서 3번 키에 해당하는 객체를 출력해보세요.
 	Map<Integer,String> members =new HashMap<>();
-	members.put(1, "홍길동");
+	members.put(1, "홍길동");//기본타입 int ->Integer로 AutoBoxing
 	members.put(new Integer(2), "일지매");
 	members.put(new Integer("3"), new String("임꺽정"));
-	members.put(2,"이순신");
+	members.put(2,"이순신");//int -> Integer
 	
 	System.out.println(members.size());
 	
