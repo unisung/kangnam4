@@ -19,6 +19,5 @@ public static void main(String[] args) {
 	 while(stk.hasMoreElements()) {
 		 System.out.print(stk.nextElement()+" ");
 	 }
-	 
 }
 }
