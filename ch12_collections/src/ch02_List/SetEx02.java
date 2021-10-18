@@ -24,7 +24,10 @@ public static void main(String[] args) {
 		System.out.println(m);
 	}
 	
-	 
+	System.out.println("------------------");
+	for(Member1 m:set)
+		System.out.println(m);
+
 }
 }
 
@@ -50,6 +53,7 @@ class Member1{
 	public int hashCode() {
 		return Objects.hash(name, sno);
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -61,10 +65,6 @@ class Member1{
 		Member1 other = (Member1) obj;
 		return Objects.equals(name, other.name) && Objects.equals(sno, other.sno);
 	}
-	
-	
 
-	
-	
 }
 
