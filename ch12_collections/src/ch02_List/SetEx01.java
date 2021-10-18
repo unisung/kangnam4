@@ -39,7 +39,6 @@ public static void main(String[] args) {
 	//비어있는지 확인
 	System.out.println(set.isEmpty());
 	
-	//
 	
 	
 	 
