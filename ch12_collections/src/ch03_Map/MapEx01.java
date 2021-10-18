@@ -13,6 +13,5 @@ public class MapEx01 {
 	 //get(key)의 리턴 값 value
 	 String value = fruits.get("apple");
 	 System.out.println(value);//value인 "사과"출력
-	 
 }
 }
