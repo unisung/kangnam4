@@ -53,6 +53,7 @@ class Member{
 	public String toString() {
 		return "Member [sno=" + sno + ", name=" + name + "]";
 	}
+	
 	@Override
 	public int hashCode() {
 		return sno;
