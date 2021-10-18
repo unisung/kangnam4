@@ -1,6 +1,7 @@
 package ch02_List;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class ArrayList02 {
@@ -23,6 +24,18 @@ public class ArrayList02 {
 		for(String s:list)//s <- 반복자 
 			System.out.println(s);
 		System.out.println();
+		
+		 list.sort(new Comparator<String>() {
+			 @Override
+			 public int compare(String o1, String o2) {
+				 return o1.compareTo(o2);
+			 }
+		 });
+		 System.out.println("---------------");
+		 for(int i=0;i<list.size();i++)
+			 System.out.println(list.get(i));
+		 System.out.println("---------------"); 
+		 
 		//6. index번호 2번에 해당하는 객체를 "유관순"으로 변경하세요.
 		list.set(2, "유관순");
 		for(String s:list)
