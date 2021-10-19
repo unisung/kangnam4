@@ -103,6 +103,7 @@ public class BankApplication {
 		int amount = scanner.nextInt();
 		//해당 계좌번호 찾기
 		Account acc = findAccount(ano);
+		System.out.println("조회결과:"+acc);
 		//해당계좌 존재 여부확인
 		if (acc != null) {
 			acc.setBalance(acc.getBalance() + amount);
@@ -138,13 +139,11 @@ public class BankApplication {
 	//Account 배열에서 ano와 동일한 Account 객체 찾기-
 	//참조타입 배열의 값 비교
 	private static Account findAccount(String ano) {
-		Account account=null;//로컬변수
 		//list에 저장된 객체 갯수 size()
 		for(int i=0;i<accountList.size();i++) {
-			  account =accountList.get(i);//  
-			  if(account.getAno().equals(ano))
-				break;//ano에 해당하는 객체 리턴
+			  Account account =accountList.get(i);// 
+		   if(account.getAno().equals(ano)) return account;
 		}
-		return account;	//배열 전체를 찾아도 없으면 null리턴
+		return null;	//배열 전체를 찾아도 없으면 null리턴
 	}
 }
