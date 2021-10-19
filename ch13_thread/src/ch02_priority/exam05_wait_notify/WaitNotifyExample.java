@@ -1,4 +1,4 @@
-package sec06.exam05_wait_notify;
+package ch02_priority.exam05_wait_notify;
 
 public class WaitNotifyExample {
 	public static void main(String[] args) {
