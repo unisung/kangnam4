@@ -1,6 +1,7 @@
 package ch03_Map;
 
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 
 public class MapEx04 {
@@ -9,7 +10,9 @@ public static void main(String[] args) {
 	// 값을 저장하는 Map을 만들고 ,저장 후 
 	// 저장된 객체의갯수 확인
 	// Map에서 3번 키에 해당하는 객체를 출력해보세요.
-	Map<Integer,String> members =new HashMap<>();
+	//Map<Integer,String> members =new HashMap<>();
+	Map<Integer,String> members =new Hashtable<>();
+	
 	members.put(1, "홍길동");//기본타입 int ->Integer로 AutoBoxing
 	members.put(new Integer(2), "일지매");
 	members.put(new Integer("3"), new String("임꺽정"));
