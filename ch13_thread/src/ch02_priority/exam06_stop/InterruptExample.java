@@ -1,4 +1,4 @@
-package sec06.exam06_stop;
+package ch02_priority.exam06_stop;
 
 public class InterruptExample {
 	public static void main(String[] args)  {
