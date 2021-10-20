@@ -1,7 +1,10 @@
 package ch01;
 
+import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class FileWriteEx3 {
@@ -11,7 +14,7 @@ public class FileWriteEx3 {
 		FileWriter fout=null;
 		int c;//
 		try {
-			fout = new FileWriter("c:\\temp\\test2.txt");
+			fout = new FileWriter("c:\\temp\\ex1.txt");
 			System.out.println("메세지를 입력하세요>");
 			while(true) {
 				String line = scanner.nextLine();//한 줄 단위로 입력받기
@@ -20,7 +23,15 @@ public class FileWriteEx3 {
 				fout.write("\r\n",0,2);//문장뒤에 캐리지 리턴추가,write(문자열,시작index,문자열길이);
 			}
 			//자원해제
-			fout.close();
+			fout.close();//파일닫아줘야 파일에 내용이 저장.
+			
+			FileReader fin = new FileReader("c:\\temp\\ex1.txt");//디렉토리\파일명
+
+		    while((c=fin.read()) !=-1) {//read()함수 한자씩 읽어서 int타입으로 리턴메소드, 데이타가 없으면 -1을 리턴
+		    	System.out.print((char)c);//문자로 형변환 후 출력
+		    }
+		    //자원해제
+		    fin.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
