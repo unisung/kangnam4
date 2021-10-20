@@ -14,6 +14,11 @@ public class ServerEx {
 		Socket socket = null;
 		Scanner scanner = new Scanner(System.in);
 		try {
+			//서버 소켓 생성
+			listener = new ServerSocket(9999);//
+			System.out.println("연결을 기다리고 있습니다....");
+			socket =listener.accept(); 
+			System.out.println("연결되었습니다.");
 			
 		}catch(Exception e) {
 			
