@@ -15,7 +15,7 @@ public static void main(String[] args) {
 	Socket socket = null;
 	Scanner scanner = new Scanner(System.in);
 	try {
-		  socket = new Socket("localhost",9999);//localhost=127.0.0.1 과 동일한 도메인 주소
+		  socket = new Socket("172.30.1.28",9999);//localhost=127.0.0.1 과 동일한 도메인 주소
 		//스트림 생성
 		 in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
