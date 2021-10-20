@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class FileWriteEx2 {
+public class FileWriteEx3 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		//문자단위(2byte)로 파일 저장하는 스트림객체 선언
