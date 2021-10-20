@@ -27,5 +27,4 @@ class Student1 implements Comparable<Student1>{
 	public int compareTo(Student1 o) {
 		return this.score-o.score;
 	}
-	
 }
