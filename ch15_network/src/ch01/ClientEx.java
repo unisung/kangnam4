@@ -19,6 +19,22 @@ public static void main(String[] args) {
 		//스트림 생성
 		 in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+		//데이타 주고받기
+		while(true) {
+			System.out.print("보내기>>");
+			String outputMessage = scanner.nextLine();//한줄씩
+			if(outputMessage.equalsIgnoreCase("bye")) {
+				out.write(outputMessage+"\n");//"bye"문자열 전송
+				out.flush();
+				break;
+			}
+			//메세지 보내기
+			out.write(outputMessage+"\n");
+			out.flush();//밀어내기
+			//메세지 받기
+			String inputMessage = in.readLine();//
+			System.out.println("서버:"+inputMessage);
+		}
 	}catch(Exception e) {
 		System.out.println(e.getMessage());
 	}finally {
