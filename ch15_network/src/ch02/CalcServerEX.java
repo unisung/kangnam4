@@ -2,6 +2,8 @@ package ch02;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.StringTokenizer;
@@ -22,9 +24,15 @@ public class CalcServerEX {
 			//접속
 			socket = listener.accept();
 			System.out.println("연결되었습니다.");
-			
-			
-			
+			//스트림 얻기
+			in
+			=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			out
+			=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+			//서비스
+			while(true) {
+				
+			}
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 		}finally {

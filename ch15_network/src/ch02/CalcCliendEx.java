@@ -2,6 +2,8 @@ package ch02;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -15,7 +17,12 @@ public class CalcCliendEx {
   try {
 	  //서버와 연결
 	  socket = new Socket("localhost",9999);
-	  
+	//스트림 얻기
+		in
+		=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		out
+		=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+		
 	  
 	  
   }catch(Exception e) {
