@@ -17,6 +17,7 @@ public class CalcCliendEx {
 	  socket = new Socket("localhost",9999);
 	  
 	  
+	  
   }catch(Exception e) {
 	  System.out.println(e.getMessage());
   }finally {
