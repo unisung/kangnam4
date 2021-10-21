@@ -31,7 +31,19 @@ public class CalcServerEX {
 			=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 			//서비스
 			while(true) {
-				
+				String inputMessage = in.readLine();
+				if("bye".equalsIgnoreCase(inputMessage)) {
+					System.out.println("클라이언트에서 연결을 종료하였습니다.");
+					break;//"bye"를 받아서 종료
+				}
+				//메세지 화면에 뿌리기
+				System.out.println(inputMessage);
+				//연산처리 
+				String res=calc(inputMessage);
+				//결과 전송하기
+				//out.write(inputMessage+"\n");
+				out.write(res+"\n");
+				out.flush();
 			}
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
