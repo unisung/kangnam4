@@ -22,9 +22,22 @@ public class CalcCliendEx {
 		=new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		out
 		=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-		
-	  
-	  
+	//서비스 요청
+	while(true) {
+		System.out.println("계산식(빈칸으로 띄어 입력,예:24 + 42)>>");
+		String outputMessage = scanner.nextLine();//키보드에서 수식 읽기
+		if("bye".equalsIgnoreCase(outputMessage)) {
+			out.write(outputMessage+"\n");//"bye"전송
+			out.flush();//////// 데이타 밀어내기
+			break;//종료
+		}
+		//수식전달
+		out.write(outputMessage+"\n");
+		out.flush();
+		//결과 받기
+		String inputMessage =in.readLine();//서버로부터 결과를 한 줄씩 수신
+		System.out.println("계산 결과:"+inputMessage);
+	}
   }catch(Exception e) {
 	  System.out.println(e.getMessage());
   }finally {
