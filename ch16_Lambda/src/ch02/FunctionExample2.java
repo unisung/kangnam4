@@ -26,7 +26,7 @@ public class FunctionExample2 {
 		});
 		System.out.println(englishAvg);
 		//¶÷´Ù½Ä
-		englishAvg=avg(value->value.getEnglishScore());
+		englishAvg=avg(student->student.getEnglishScore());
 		System.out.println(englishAvg);
 	}
 }

@@ -53,8 +53,6 @@ public class FunctionExample {
 		}
 	});
     //¶÷´Ù½Ä
-    printInt(student->student.getMathScore());
-    
+     printInt(student->student.getMathScore());
 	}
-
 }
