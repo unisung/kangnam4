@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class ConnectionTest12 {
+public class ConnectionTest13 {
 	public static void main(String[] args) {
 		final String driver ="oracle.jdbc.driver.OracleDriver";
 		final String url ="jdbc:oracle:thin:@localhost:1521:xe";
@@ -29,7 +29,7 @@ public class ConnectionTest12 {
 		 int price = scanner.nextInt();
 		 //title과 sql을 조합해서 아래와 같이 만들고 출력 
 		String sql ="select * from book where bookname like '%'||'"
-		            +title+"'||'%' and price>="+price;//<--쿼ㅣ문 작성
+		            +title+"'||'%' and price>="+price+" order by publisher asc, price desc";//<--쿼ㅣ문 작성
 		
 		 System.out.println("쿼리문:"+sql);
 
