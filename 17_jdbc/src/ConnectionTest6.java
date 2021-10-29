@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class ConnectionTest5 {
+public class ConnectionTest6 {
 	public static void main(String[] args) {
 	 try {
 		 //1.드라이버 로딩
@@ -14,8 +14,8 @@ public class ConnectionTest5 {
 		 //3.쿼리객체 생성
 		 Statement stmt = con.createStatement();
 		 //4.쿼리문 작성
-		 //조회 조건이 숫자인 경우는 숫자르 where 조건 값으로 바로 사용
-		 String sql ="select bookid, bookname, publisher, price from book where bookid=1";
+		 //조회 조건이 문자열인 경우는 문자열 표시 ''로 묶어서 where 조건 값으로 사용
+		 String sql ="select bookid, bookname, publisher, price from book where bookname  like '축구의 역사'";
 
 		 //5.쿼리문 전송 및 결과 받기
 		 ResultSet rs = stmt.executeQuery(sql);
