@@ -31,7 +31,7 @@ public class InsertTest4 {
              stmt.executeUpdate(sql);
              
             //5-2.결과 조회 
-            sql ="select * from cutomer order by custid";
+            sql ="select * from customer order by custid";
             //조회 
             ResultSet rs = stmt.executeQuery(sql);
             while(rs.next()) {
