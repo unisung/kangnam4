@@ -21,7 +21,9 @@ public class InsertTest3 {
              String  phone = scanner.nextLine();
              
             //4.쿼리문 생성
-            String sql ="";//쿼리문 작성
+            String sql ="insert into customer(custid, name, address, phone) "
+            		   +" values((select max(custid) + 1 from customer),'"
+            		   +name+"','"+address+"','"+phone+"')";//쿼리문 작성
             System.out.println("sql:"+sql);
             //5.쿼리전송 및 결과받기 
             //executeUpdate(쿼리문) 리턴타입은 int 삽입된 행의 수 리턴, 0이면 입력안된 결과
