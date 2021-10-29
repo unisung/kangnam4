@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class ConnectionTest9 {
+public class ConnectionTest11 {
 	public static void main(String[] args) {
 		final String driver ="oracle.jdbc.driver.OracleDriver";
 		final String url ="jdbc:oracle:thin:@localhost:1521:xe";

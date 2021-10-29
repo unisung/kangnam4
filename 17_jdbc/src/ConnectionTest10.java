@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class ConnectionTest9 {
+public class ConnectionTest10 {
 	public static void main(String[] args) {
 		final String driver ="oracle.jdbc.driver.OracleDriver";
 		final String url ="jdbc:oracle:thin:@localhost:1521:xe";
@@ -18,14 +18,13 @@ public class ConnectionTest9 {
 		 //3.쿼리객체 생성
 		 Statement stmt = con.createStatement();
 		 //4.쿼리문 작성
-		 //조회 조건이 문자열인 경우는 문자열 표시 ''로 묶어서 where 조건 값으로 사용
-		 //스캐너로 값을 입력받어서 조회
+		 //도서이름의 왼쪽 두 번째 위치에 ‘구’라는 문자열을 갖는 도서를 검색하시오.
+         //select *  from book where bookname like '_구%';
 		 Scanner scanner = new Scanner(System.in);
-		 System.out.println("조회할 책 제목을 입력하세요>");
+		 System.out.println("제목을 입력하세요>");
 		 String title = scanner.next();
-		 //title과 sql을 조합해서 아래와 같이 만들고 출력 
-		String sql ="select bookname,publisher from book where bookname like '%'||'"+title+"'||'%'";//<--쿼ㅣ문 작성
-		
+		 String sql ="select *  from book where bookname like '_"+title+"%'";//<--쿼ㅣ문 작성
+		 
 		 System.out.println("쿼리문:"+sql);
 
 		 //5.쿼리문 전송 및 결과 받기
@@ -35,10 +34,11 @@ public class ConnectionTest9 {
 		 System.out.println("---------------------------------");
 		 //한건 인 경우 한번만 rs.next() 호출
 		 while(rs.next()) {
-			 String bookname = rs.getString(1);
-			 String publisher = rs.getString(2);
-			
-			 System.out.println(bookname+"\t|"+publisher);
+			 int bookid = rs.getInt(1);
+			 String bookname = rs.getString(2);
+			 String publisher = rs.getString(3);
+			 int price =rs.getInt(4);
+			 System.out.println(bookid+"\t|"+bookname+"\t|"+publisher+"\t|"+price);
 		 }
 		 //7.자원해제
 		 rs.close();    stmt.close();   con.close();
