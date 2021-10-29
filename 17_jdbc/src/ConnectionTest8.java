@@ -20,9 +20,9 @@ public class ConnectionTest8 {
 		 //조회 조건이 문자열인 경우는 문자열 표시 ''로 묶어서 where 조건 값으로 사용
 		 int minValue=10000;
 		 int maxValue=20000;
-		 //select * from book 		where price >=10000 and price<=20000;
+		 //select * from book where price >=10000 and price<=20000;
 		 
-		 String sql =""//<--쿼ㅣ문 작성
+		 String sql ="select * from book where price >= "+ minValue+" and price<="+maxValue;//<--쿼ㅣ문 작성
 		 System.out.println("쿼리문:"+sql);
 
 		 //5.쿼리문 전송 및 결과 받기
@@ -31,7 +31,7 @@ public class ConnectionTest8 {
 		 System.out.println("bookid| bookname| publisher|price");
 		 System.out.println("---------------------------------");
 		 //한건 인 경우 한번만 rs.next() 호출
-		 if(rs.next()) {
+		 while(rs.next()) {
 			 int bookid = rs.getInt(1);
 			 String bookname = rs.getString(2);
 			 String publisher = rs.getString(3);
