@@ -14,16 +14,16 @@ public class InsertTest2 {
             Statement stmt = con.createStatement();
             //
              System.out.println("등록할 도서명을 입력하세요>");
-             String title = scanner.next();
+             String title = scanner.nextLine();
              System.out.println("등록할 출판사명을 입력하세요>");
-             String  publisher = scanner.next();
+             String  publisher = scanner.nextLine();
              System.out.println("등록할 가격을 입력하세요>");
              int  price = scanner.nextInt();
              
             //4.쿼리문 생성
             String sql ="insert into book(bookid, bookname,publisher, price) "
             		  + " values((select max(bookid)+1 from book),'"+title+"','"+publisher+"',"+price+")";
-            
+            System.out.println("sql:"+sql);
             //5.쿼리전송 및 결과받기 
             //executeUpdate(쿼리문) 리턴타입은 int 삽입된 행의 수 리턴, 0이면 입력안된 결과
              int result =stmt.executeUpdate(sql);            
@@ -33,12 +33,9 @@ public class InsertTest2 {
 				System.out.println("입력실패");
 			}
 			//6.자원해제
-			stmt.close();  con.close();
+			stmt.close();  con.close(); scanner.close();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-
 	}
 }
