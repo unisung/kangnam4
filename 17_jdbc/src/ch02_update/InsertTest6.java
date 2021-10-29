@@ -54,17 +54,17 @@ public class InsertTest6 {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-}
+	}//main메소드 끝.
+}//클래스 끝.
 
-/*
- --account테이블 생성
+/************************************* 
+--account테이블 생성
 create table account(
 accountNo varchar2(50)  primary key,
 owner  varchar2(100),
 balance number
 );
- 
+
 insert into account values('111-001', '홍길동',10000);
 
 select * from account;
@@ -88,5 +88,4 @@ select '111'||'-'||lpad(to_number(nvl(substr(nvl(max(accountno),0),5,3),0))+1,3,
 -- 111-002, '일지매', 10000
 -- 111-003, '임꺽정', 10000
 
- * */
- */
+********************/
