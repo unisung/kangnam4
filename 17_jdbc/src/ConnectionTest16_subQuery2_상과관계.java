@@ -6,42 +6,20 @@ import java.util.Scanner;
 
 public class ConnectionTest16_subQuery2_상과관계 {
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
 	 try {
 		 //
 		 Connection con = DaoConnector.getInstance().getConnection();
 		 //3.쿼리객체 생성
 		 Statement stmt = con.createStatement();
 		 //4.쿼리문 작성
-		 // (1) 박지성이 구매한 도서의 출판사와 같은 출판사에서 도서를 구매한 고객의 이름
-		 //select name
-		 // from customer, orders, book
-		 // where customer.custid = orders.custid
-		 //    and orders.bookid = book.bookid
-		 //    and publisher in (
-		 //                             select publisher
-		 //                               from customer, orders, book 
-		 //                              where customer.custid = orders.custid
-		 //                                and orders.bookid = book.bookid
-		 //                                and name like '박지성'  
-		 //    )
-		 //    and name not  like '박지성'
-		 //  ;  
-		 
-		 System.out.println("구매한 고객명을 입력하세요>");
-	     String custName = scanner.next();
-		  
-		String sql ="select name "
-				+ "  from customer, orders, book "
-				+ " where customer.custid = orders.custid "
-				+ "   and orders.bookid = book.bookid "
-				+ "   and publisher in ( select publisher "
-				+ "                       from customer, orders, book"
-				+ "                      where customer.custid = orders.custid "
-				+ "                        and orders.bookid = book.bookid"
-				+ "                        and name like '"+custName+"'"
-				+ "   )"
-				+ " and name not  like '"+custName+"'";
+		 //(2) 두 개 이상의 서로 다른 출판사에서 도서를 구매한 고객의 이름
+		String sql ="select name"
+				+ "    from customer c1"
+				+ "   where (select count(distinct publisher) "
+				+ "            from customer,orders,book "
+				+ "           where customer.custid=orders.custid "
+				+ "             and orders.bookid=book.bookid"
+				+ "             and name like c1.name ) >= 2";
 		
 		 System.out.println("쿼리문:"+sql);
 
