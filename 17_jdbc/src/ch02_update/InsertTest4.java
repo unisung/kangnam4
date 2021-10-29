@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
+//자바프로그램은 dbms저장 default 옵션이 autocommit<- commit 명령 실행하지 않아도 db에 자동 반영 
 public class InsertTest4 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
