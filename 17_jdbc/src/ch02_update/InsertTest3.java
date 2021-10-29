@@ -13,7 +13,7 @@ public class InsertTest3 {
 			//3.쿼리객체 생성
             Statement stmt = con.createStatement();
             // 박지성, "서울시", "010-333-4567"
-             System.out.println("등록할 고개명을 입력하세요>");
+             System.out.println("등록할 고객명을 입력하세요>");
              String name = scanner.nextLine();
              System.out.println("등록할 주소명을 입력하세요>");
              String  address = scanner.nextLine();
