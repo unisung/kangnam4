@@ -6,9 +6,6 @@ import java.sql.Statement;
 
 //DBMS연결객체 싱글톤으로 만들기
 public class DaoConnector {
-  Connection conn=null;
-  Statement stmt=null;
-  ResultSet rs=null;
   //1.static접근자의 자신타입의 필드 선언
   private static  DaoConnector instance = new DaoConnector();
   
