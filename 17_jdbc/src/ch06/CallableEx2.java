@@ -31,3 +31,33 @@ public class CallableEx2 {
 		 cstmt.close(); con.close();
 	}
 }
+
+/*
+
+create or replace NONEDITIONABLE procedure bookInsertORUpdate(
+ mybookId number,
+ mybookName varchar2,
+ mypublisher varchar2,
+ myPrice number
+) 
+as 
+ mycount number;--begin내에서 사용한 변수`
+begin 
+       --1. 입력받은 bookname으로 조회한 결과 값을 mycount에 저장 
+       select count(*)  into mycount -- seelct 칼럼값 into 변수 
+         from book 
+       where bookname like mybookName;
+
+       -- if 조건 then 실행문; else 실행문 end if;
+       if  mycount!=0 then -- mybookName을 조회한 결과값이 있으면 
+            update book
+                  set price = myPrice   -- 가격을 입력받은 값으로 수정
+            where  bookname like mybookName;
+       else -- mycount==0  -- 입력
+            insert into book(bookid, bookname, publisher, price)
+              values(mybookId,mybookName,mypublisher,myPrice);
+       end if;
+end;
+
+
+*/
