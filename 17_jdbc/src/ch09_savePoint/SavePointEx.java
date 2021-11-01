@@ -40,5 +40,25 @@ public class SavePointEx {
 			e.printStackTrace();
 		}
 	}
-
 }
+/**
+ select * from customer;
+
+insert into customer values(10,'김길동','서울시','010-111-111');
+savepoint s1;-----
+
+select * from customer;
+insert into customer values(11,'장길동','서울시','010-111-999');
+savepoint s2;
+
+select * from customer;
+
+
+rollback to s2;
+
+rollback to s1;
+
+delete from customer where custid in (10,11);
+commit; 
+ * */
+
