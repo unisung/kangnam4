@@ -21,7 +21,7 @@ public class PreparedStatementEx {
 		 String sql ="select * from customer where custid=?";
 		 PreparedStatement pstmt = con.prepareStatement(sql);//생성시 sql문을 매개변수로 받아서 생성
 		 //sql문 전달시 10이 바인딩되어서 완전한 쿼리문으로 전달됨
-		 pstmt.setInt(1, 10);
+		 pstmt.setInt(1, 1);
 		 
 		 //4.실행
 		 ResultSet rs = pstmt.executeQuery();//실행시는 sql문 을 매개변수로 받지안혹 실행

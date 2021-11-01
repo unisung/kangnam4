@@ -22,7 +22,7 @@ public class PreparedStatementEx4_update {
 		 PreparedStatement pstmt = con.prepareStatement(sql);//생성시 sql문을 매개변수로 받아서 생성
 		 //sql문 전달시 10이 바인딩되어서 완전한 쿼리문으로 전달됨
 		 pstmt.setString(1, "축구가 좋을껄?");
-		 pstmt.setString(2, "korea출판사");
+		 pstmt.setString(2, "korea2출판사");
 		 pstmt.setInt(3, 30);
 		 
 		 //4.실행
@@ -35,3 +35,8 @@ public class PreparedStatementEx4_update {
   }
 }
 }
+/**
+ * 트리거 기능 정지/기동처리
+  alter trigger AfterUpdateBook disable;
+  alter trigger AfterUpdateBook enable; 
+ * */
