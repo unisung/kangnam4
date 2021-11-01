@@ -63,7 +63,9 @@ public static void main(String[] args) {
 	}catch(Exception e) {
 		try {
 		con.rollback();
-		}catch(Exception e1) {}
+		}catch(Exception e1) {
+			e1.printStackTrace();
+		}
 		e.printStackTrace();
 	}
 }
