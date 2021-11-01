@@ -33,7 +33,14 @@ public class InsertTest6 {
            //
             System.out.println("계속할까요?(y/n)>");
             String isRun = scanner.next();
+            try {
             if(isRun.equalsIgnoreCase("n")) run=false;
+            if(!(isRun.equalsIgnoreCase("n") | isRun.equalsIgnoreCase("y")) ) {
+            	throw new Exception("y나 n을 입력하세요");
+            }
+            }catch(Exception e) {
+            	System.out.println(e.getMessage());
+            }
            }		
             
             //5.결과 조회 
