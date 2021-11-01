@@ -68,3 +68,19 @@ public static void main(String[] args) {
 	}
 }
 }
+/**
+ * 
+-- 테이블 삭제
+drop table table_test;
+-- 테이블 생성
+create table table_test(
+bookid number primary key,
+bookname varchar2(50),
+price number
+);
+--입력 쿼리문
+insert into table_test values ((select nvl(max(bookid), 0)+1 from table_test),'book'||(select 'book'||(nvl(max(bookid), 0)+1) from table_test), 5000); 
+--입력 데이타 조회
+select * from table_test; 
+    
+ * */
