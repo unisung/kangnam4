@@ -14,6 +14,9 @@ public class InsertTest_balaceEx {
 		//1.드라이버로딩,2.연결객체 생성
 		try {
 			Connection con = DaoConnector.getInstance().getConnection();
+			//commit 수동처리 시작
+			con.setAutoCommit(false);
+			
 			//3.쿼리객체 생성
             //
            String sql="";
@@ -23,7 +26,7 @@ public class InsertTest_balaceEx {
                System.out.println("이체할 고객번호 입력하세요>");
                String accountNo2 = scanner.next();
                System.out.println("이체 금액을 입력하세요>");
-               int  balance = scanner.nextInt();
+               int  amount = scanner.nextInt();
              
             //4.쿼리문 생성 
             //4-3.등록 처리
@@ -36,30 +39,35 @@ public class InsertTest_balaceEx {
                + " from account where accountno=? "
                + " )";
             PreparedStatement pstmt = con.prepareStatement(sql);
-            
-            con.setAutoCommit(false);
-            
+            //계좌번호 설정
             pstmt.setString(1, accountNo1); 
             pstmt.setString(2, accountNo2);
+            
             ResultSet rs = pstmt.executeQuery();
+          
             if(rs.next()) {
             	if(rs.getInt(1)==0 | rs.getInt(2)==0) {
             		System.out.println("계좌번호를 확인하세요");
-            		break;
             	}else {
-            		int fromAmount =rs.getInt(3);
-            		int toAmount = rs.getInt(4);
-            		sql="update account set balance -= ? where accountno=? ";
+            		sql="update account set balance =balance - ? where accountno=? ";
             		pstmt = con.prepareStatement(sql);
+            		pstmt.setInt(1, amount);
+            		pstmt.setString(2, accountNo1);
             		int result =pstmt.executeUpdate();
             		if(result>0) {
-	            		sql="update account set balance += ? where accountno=? ";
+	            		sql="update account set balance = balance + ? where accountno=? ";
 	            		pstmt = con.prepareStatement(sql);
+	            		pstmt.setInt(1, amount);
+	            		pstmt.setString(2, accountNo2);
 	            		pstmt.executeUpdate();
             		}
+            		//두개 의 수정작업 이상없으면 db에 반영처리
             		con.commit();
+            		System.out.println("이체가 완료 되었습니다.");
             	}
-            }		
+            }else {
+            	System.out.println("오류");
+            }
            //
             System.out.println("계속할까요?(y/n)>");
             String isRun = scanner.next();
@@ -69,11 +77,13 @@ public class InsertTest_balaceEx {
             	throw new Exception("y나 n을 입력하세요");
             }
             }catch(Exception e) {
+            	//예외 발생시 둘다 이전상태로 되돌리기
             	con.rollback();
             	System.out.println(e.getMessage());
             }
-           }		
-		}catch(Exception e) {}  
+           }//while문 끝.
+		}catch(Exception e) {e.printStackTrace();}
+		System.out.println("프로그램 종료");
 	}//main메소드 끝.
 }//클래스 끝.
 
